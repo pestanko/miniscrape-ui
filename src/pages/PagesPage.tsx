@@ -24,7 +24,7 @@ export default function PagesPage() {
     <Box>
       <PageTitle>Pages</PageTitle>
       <Box className="pages-contents-list">
-        {pagesContent.map((pc) => (
+        {pagesContent.filter(pc => pc.content).map((pc) => (
           <PageCard
             key={pc.page.codename}
             pageName={pc.page.name}
