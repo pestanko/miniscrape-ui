@@ -1,8 +1,8 @@
 #! /bin/bash
 
 TARGET="/var/www/lunch"
-SOURCE=$PWD
+SOURCE="$PWD/build"
 
 npm run 'build:prod'
 
-cp "$SOURCE" "$TARGET"
+cp -r "$SOURCE/*" "$TARGET"
