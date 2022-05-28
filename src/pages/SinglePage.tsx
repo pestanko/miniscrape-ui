@@ -1,6 +1,5 @@
 import { Box } from "@mui/material";
 import { useParams } from "react-router-dom";
-import PageCard from "../components/PageCard";
 import PageTitle from "../components/PageTitle";
 
 export default function SinglePage() {

@@ -1,4 +1,4 @@
-import { Link } from "@mui/material";
+import { Container, Link } from "@mui/material";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Copyright from "../components/Copyright";
 import TopMenu from "../components/TopMenu";
@@ -14,7 +14,8 @@ export default function AppRouter() {
       <header className="app-header">
         <TopMenu pageName="Categories"></TopMenu>
       </header>
-      <section className="app-content">
+      
+      <Container className="app-content">
         <Routes>
           <Route path="/">
             <Route index element={<HomePage />} />
@@ -25,7 +26,7 @@ export default function AppRouter() {
             <Route path="about" element={<AboutPage />} />
           </Route>
         </Routes>
-      </section>
+      </Container>
       
       <footer className="app-footer">
         <Copyright>

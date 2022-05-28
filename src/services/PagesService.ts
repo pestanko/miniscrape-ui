@@ -21,6 +21,11 @@ export interface PageContent {
   status: string;
 }
 
+export interface PageContentParams {
+  category?: string;
+  tags?: string[];
+}
+
 export class PagesService {
   private api: string;
 
@@ -38,10 +43,15 @@ export class PagesService {
     return (await response.data) as CategoryInfo[];
   }
 
-  public async getPagesContent(
-    category: string = "food"
-  ): Promise<PageContent[]> {
-    const url = this.getUri("content") + `?c=${category}`;
+  public async getPagesContent({
+    category,
+    tags,
+  }: PageContentParams): Promise<PageContent[]> {
+    category = category ? category : "food";
+    tags = tags ? tags : [];
+
+    const tagsString = tags.map((t) => `t=${t}`).join("&");
+    const url = this.getUri("content") + `?c=${category}&${tagsString}`;
     const response = await this.get(url);
 
     return (await response.data) as PageContent[];
