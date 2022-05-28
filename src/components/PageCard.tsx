@@ -3,7 +3,6 @@ import {
   Button,
   Collapse,
   Link,
-  List,
   Stack,
   Typography,
 } from "@mui/material";
