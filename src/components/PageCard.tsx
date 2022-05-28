@@ -1,12 +1,6 @@
-import {
-  Box,
-  Button,
-  Collapse,
-  Link,
-  Stack,
-  Typography,
-} from "@mui/material";
+import { Box, Button, Collapse, Link, Stack, Typography } from "@mui/material";
 import { PropsWithChildren, useState } from "react";
+import TagLink from "./TagLink";
 
 interface PageCardProps {
   pageName: string;
@@ -46,9 +40,7 @@ export default function PageCard({
           <Stack direction="row" spacing={2}>
             <Typography>Tags:</Typography>
             {tags.map((tag) => (
-              <Link href={`/pages?t=${tag}`} className="tag" key={tag}>
-                <Typography>{tag}</Typography>
-              </Link>
+              <TagLink name={tag} />
             ))}
           </Stack>
           <Typography variant="h6">Content: </Typography>

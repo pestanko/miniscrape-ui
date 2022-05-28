@@ -10,6 +10,12 @@ export interface PageInfo {
   resolver: string;
 }
 
+export interface Category {
+  tags: string[];
+  name: string;
+  pages: string[];
+}
+
 export interface CategoryInfo {
   name: string;
   pages: PageInfo[];
@@ -57,9 +63,10 @@ export class PagesService {
     return (await response.data) as PageContent[];
   }
 
-  public async getCategoriesList(): Promise<string[]> {
+  public async getCategoriesList(): Promise<Category[]> {
     const response = await this.get(this.getUri("categories"));
-    return response.data;
+
+    return response.data as Category[];
   }
 
   public async getPagesInCategory(category: string): Promise<CategoryInfo[]> {

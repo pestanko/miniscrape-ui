@@ -17,7 +17,7 @@ export default function AppRouter() {
           minHeight: "100vh",
         }}
       >
-        <header style={{marginBottom: "20px"}} className="app-header sticky">
+        <header style={{ marginBottom: "20px" }} className="app-header sticky">
           <TopMenu pageName="Categories"></TopMenu>
         </header>
 
@@ -34,7 +34,10 @@ export default function AppRouter() {
           </Routes>
         </Container>
 
-        <footer style={{marginTop: "20px"}} className="app-footer sticky bottom-0">
+        <footer
+          style={{ marginTop: "20px" }}
+          className="app-footer sticky bottom-0"
+        >
           <Copyright>
             <Link color="inherit" href="mailto:peter.stanko0@gmail.com">
               by Peter Stanko (peter.stanko0@gmail.com)
