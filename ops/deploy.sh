@@ -5,4 +5,4 @@ SOURCE="$PWD/build"
 
 npm run 'build:prod'
 
-cp -r "$SOURCE/*" "$TARGET"
+cp -r "$SOURCE"/* "$TARGET"
